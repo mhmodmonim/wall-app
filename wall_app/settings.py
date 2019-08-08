@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'core',
     'allauth',
     'allauth.account',
 ]
@@ -164,3 +164,9 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT', int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+
+
+# weclome email send when  new user registered
+WELCOME_EMAIL_TITLE = config('WELCOME_EMAIL_TITLE')
+WELCOME_EMAIL_BODY = config('WELCOME_EMAIL_BODY')
