@@ -17,6 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
+    timestamp = serializers.DateTimeField(format="%d-%m-%Y %H:%I", read_only=True)
     class Meta:
         model = Post
         fields = [
