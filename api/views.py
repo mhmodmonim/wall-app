@@ -25,7 +25,7 @@ class PostListAPI(generics.ListAPIView):
 class PostCreateAPI(generics.CreateAPIView):
     lookup_field = 'pk'
     serializer_class = PostSerializer
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    authentication_classes = [SessionAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
