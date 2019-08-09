@@ -14,7 +14,7 @@ $ python3 -m venv env
 $ source env/bin/activate 
 $ git clone git@github.com:mahmoudadev/wall-app.git
 $ cd wall-app
-$ pip3 install requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 
