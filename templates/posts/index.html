@@ -43,13 +43,12 @@
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/app.js' %}"></script>
     <script>
         var next_url = null;
         $('#err_msg').hide();
         $.ajax({
             type: 'get',
-            url: 'api/v1/posts/',
+            url: '{% url 'posts-api:list' %}',
             success: function (data) {
                 if (data.next) {
                     next_url = data.next;
@@ -95,7 +94,7 @@
         $('form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: 'api/v1/posts/create/',
+                url: '{% url 'posts-api:create' %}',
                 type: 'post',
                 headers: {
                     'X-CSRFTOKEN': '{{ csrf_token }}',
@@ -118,8 +117,8 @@
                 error: function (data) {
                     $('#err_msg').show();
 
-                    for (var prop in data.responseJSON) {
-                        $('#err_msg').append("<li>" + data.responseJSON[prop] + "</li>");
+                    for (var prop in JSON.parse(data.responseText)){
+                        $('#err_msg').html("<li>" + prop + ': ' + data.responseJSON[prop] + "</li>");
                     }
                 }
             });

@@ -12,10 +12,9 @@ def send_welcome_email(sender, instance,created, **kwargs):
             settings.WELCOME_EMAIL_BODY,
             settings.EMAIL_HOST_USER,
             [instance.email],
-            fail_silently=False,
+            fail_silently=True,
         )
 
 
 
 post_save.connect(send_welcome_email, sender=User)
-
