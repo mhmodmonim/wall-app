@@ -41,7 +41,7 @@ create an account and post on the wall.
 
 ```
 
-- I have create also `login` and `register` API's endpoint. in case we need to integrate with 
+- I have created also `login` and `register` API's endpoint. in case we need to integrate with 
 mobile application or desktop software.
 
 so here are the auth endpoints:
