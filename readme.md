@@ -32,5 +32,24 @@ $ python manage.py runserver
 ```
 - Finally, you can navigate to `localhost:8000/`
 
-
 create an account and post on the wall. 
+
+##### Main API's endpoints:
+```
+    GET   /api/v1/posts/
+    POST  /api/v1/posts/create
+
+```
+
+- I have create also `login` and `register` API's endpoint. in case we need to integrate with 
+mobile application or desktop software.
+
+so here are the auth endpoints:
+```
+    POST  /api/v1/auth-rest/login/
+    PoST  /api/v1/auth-rest/registration/
+    POST  /api-token-auth/
+```
+
+
+Thank you!
